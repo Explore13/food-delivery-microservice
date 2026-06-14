@@ -1,0 +1,10 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management # Using the official RabbitMQ image with the management plugin
+    container_name: rabbitmq # Name of the container
+    ports: # Expose the necessary ports for RabbitMQ
+      - "5672:5672" # Port for RabbitMQ clients (producers and consumers)
+      - " :15672" # Port for RabbitMQ management UI
+    environment: # Set environment variables for RabbitMQ
+      RABBITMQ_DEFAULT_USER: guest # Default credentials for RabbitMQ (not recommended for production)
+      RABBITMQ_DEFAULT_PASS: guest # Default credentials for RabbitMQ (not recommended for production)
