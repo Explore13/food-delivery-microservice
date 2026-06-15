@@ -17,6 +17,6 @@ async function bootstrap() {
     },
   );
   await app.listen();
-  console.log(`🔥 Kitchen service is listeing on kitchen_queue`);
+  console.log(`🔥 Kitchen service is listening on kitchen_queue`);
 }
 void bootstrap();
