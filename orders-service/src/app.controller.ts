@@ -7,7 +7,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Post()
-  createOrder(@Body() dto: CreateOrderDto) {
-    return this.appService.createOrder(dto);
+  async createOrder(@Body() dto: CreateOrderDto) {
+    return await this.appService.createOrder(dto);
   }
 }

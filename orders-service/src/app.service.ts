@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { CreateOrderDto } from './create-order.dto';
 import { ClientProxy } from '@nestjs/microservices';
 import { db } from './db/db';
-import { Order } from './orders.enum';
+import { Order } from '../orders.enum';
 import { orders } from './db/schema';
 
 @Injectable()
@@ -24,7 +24,7 @@ export class AppService {
 
     console.log(`Order saved to DB : ID ${order.id}`);
 
-    this.kitchenClient.emit('order_craeted', {
+    this.kitchenClient.emit('order_created', {
       orderId: order.id,
       customerName: order.customerName,
       item: order.item,
